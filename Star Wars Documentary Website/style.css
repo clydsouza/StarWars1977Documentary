@@ -1,0 +1,80 @@
+body{
+  height: 5000px;
+    background-color: rgb(68, 68, 68);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll-watcher {
+  height: 10px;
+  position: fixed; 
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding-top: 5px;
+
+  scale: 0 1.5;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+
+}
+
+@keyframes scroll-watcher {
+  to { scale:  20 1.5; }
+}
+
+.logo{
+  animation: fade-out linear;
+  animation-timeline: view(50px);
+}
+
+@keyframes fade-out{
+  from {scale: 2; opacity: 1;}
+  to { scale: 0; opacity: 0;}
+}
+
+.heading{
+  font-family: "Mulish", sans-serif;
+  color: antiquewhite;
+  font-optical-sizing: large;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 50px;
+  width: 1200px;
+  padding-bottom: 50px;
+
+}
+.text1{
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 700px;
+  font-size: 30px;
+  height: 150px;
+  color: bisque;
+}
+
+.slide1{
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.0;
+  scale: 0.70;
+
+  animation: slide1_animation linear forwards;
+  animation-timeline: scroll();
+  animation-range: exit;
+  
+}
+
+
+@keyframes slide1_animation {
+  10% { opacity: 0; scale: 0.70}
+  25% { opacity: 1; scale: 1}
+  30% { opacity: 1; scale: 1}
+  45% { opacity: 0; scale: 0}
+  100% { opacity: 1;}
+}
